@@ -1,0 +1,26 @@
+.todo{
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    display: flex;
+    margin: 0 auto;
+}
+
+.todo-text{
+    font-size: 1.3rem;
+}
+
+.todo-text p{
+    margin-left: 5rem;
+}
+
+.todo-id{
+    display: flex;
+}
+
+.buttons{
+    margin: 0 auto;
+}
+
+.todo-id p{
+    margin-left: 5rem;
+}
