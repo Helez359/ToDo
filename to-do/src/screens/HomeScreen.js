@@ -25,7 +25,7 @@ const HomeScreen = () => {
         <div>
             <h1 className="my-5">MyToDoApp</h1>
             <Link to="/addtodo">
-                <Button>Add New ToDo</Button>
+                <Button variant="info">Add New ToDo</Button>
             </Link>
             <ToDoList todos = {todos} />
         </div>

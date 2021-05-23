@@ -30,7 +30,7 @@ const AddToDo = ({history}) => {
                         >
                         </Form.Control>
                     </Form.Group>
-                    <Button type="submit">ADD</Button>
+                    <Button type="submit" vairant="info" block>ADD</Button>
                 </Form>
             </Container>
         </div>
