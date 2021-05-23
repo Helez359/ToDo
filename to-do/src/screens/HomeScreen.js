@@ -1,27 +1,32 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ToDoList from '../components/ToDoList'
+import db from '../firebase'
+import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
+
 
 const HomeScreen = () => {
 
-    const todos = [
-        {
-            id: 1,
-            text: "Go have fun",
-        },
-        {
-            id: 2,
-            text: "Eat a grape",
-        },
-        {
-            id: 3,
-            text: "Laugh at joke",
-        },
-    ];
+    const [todos, setTodos] = useState([]);
+
+    useEffect(()=>{
+        db.collection("todos").onSnapshot((snapshot)=>{
+            setTodos(
+                snapshot.docs.map((doc)=>({
+                    id: doc.id,
+                    text: doc.data().todo,
+                }))
+            );
+        });
+    }, []);
 
 
     return (
         <div>
-            <h1>MyToDoApp</h1>
+            <h1 className="my-5">MyToDoApp</h1>
+            <Link to="/addtodo">
+                <Button>Add New ToDo</Button>
+            </Link>
             <ToDoList todos = {todos} />
         </div>
     )
